@@ -24,8 +24,6 @@
     <view type="form" name="college-form" />
   </action-view>
 
-
-
   <menuitem name="admission-root-admission-process" parent="admission-root"
     title="Admission Process" action="admissionProcess.all" />
 
@@ -43,6 +41,5 @@
     <view type="grid" name="admission-entry-grid" />
     <view type="form" name="admission-entry-form" />
   </action-view>
-
 
 </object-views>
