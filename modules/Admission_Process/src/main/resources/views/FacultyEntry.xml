@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+	<grid name="faculty-entry-grid" model="com.axelor.admission.db.FacultyEntry"
+		title="Faculty Grid">
+		<field name="faculty" />
+		<field name="collage" />
+		<field name="seats" />
+	</grid>
+
+	<form name="faculty-entry-form" model="com.axelor.admission.db.FacultyEntry"
+		title="Faculty Form" width="large" css="panel-pink">
+		<panel title="Faculty" colSpan="12" name="facultyEntryPanel">
+			<field name="faculty" required="true" />
+			<field name="seats" />
+			<field name="collage" />
+		</panel>
+
+		<panel sidebar="true">
+			<field name="createdOn" />
+			<field name="updatedOn" />
+		</panel>
+	</form>
+
+</object-views>

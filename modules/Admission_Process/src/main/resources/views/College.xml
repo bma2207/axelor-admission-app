@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+  <grid name="college-grid" model="com.axelor.admission.db.College"
+    title="College Grid">
+    <field name="name" />
+  </grid>
+
+  <form name="college-form" model="com.axelor.admission.db.College"
+    title="College Form" width="large" css="panel-pink">
+    <panel title="College" colSpan="12" name="college">
+      <field name="name" required="true" />
+      <field name="faculitiesList" />
+    </panel>
+
+    <panel sidebar="true">
+      <field name="createdOn" />
+      <field name="updatedOn" />
+    </panel>
+  </form>
+
+</object-views>
