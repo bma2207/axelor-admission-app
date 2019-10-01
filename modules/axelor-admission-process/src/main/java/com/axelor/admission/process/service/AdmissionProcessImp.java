@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import com.axelor.admission.db.AdmissionEntry;
 import com.axelor.admission.db.AdmissionProcess;
 import com.axelor.admission.db.CollegeEntry;
@@ -54,6 +53,7 @@ public class AdmissionProcessImp implements AdmissionProcessService {
 								repo.save(admissionEntry);
 							}
 						}
+						break;
 					}
 				}
 

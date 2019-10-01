@@ -13,7 +13,6 @@ public class AdmissionProcessController {
 
 	@Transactional
 	public void admissionProccess(ActionRequest request, ActionResponse response) {
-
 		AdmissionProcess admissionProcess = request.getContext().asType(AdmissionProcess.class);
 		admissionProcess = service.admissionSeatsManage(admissionProcess);
 		response.setValues(admissionProcess);

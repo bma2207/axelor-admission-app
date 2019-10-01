@@ -35,13 +35,13 @@
 			<field name="collegeSelected" readonly="true" showIf="status != 1" />
 		</panel>
 		<panel sidebar="true" hideIf="$readonly()">
-			<button name="Confirmed" title="Confirmed" hidden="true"
+			<button name="Confirmedbtn" title="Confirmed" hidden="true"
 				showIf="status ==1" onClick="action-admission-entry-group-onClick-confirmed" />
-			<button name="Canceled" title="Canceled" showIf="status == 1"
+			<button name="Canceledbtn" title="Canceled" showIf="status == 1"
 				onClick="action-admission-entry-attrs-set-status-Cancelled" />
 			<!-- <button name="Admitted" title="Admitted" showIf="status == 2" onClick="action-admission-entry-attrs-set-status-Admitted" 
 				/> -->
-			<button name="draft" title="Draft" showIf="status == 2 || status == 4"
+			<button name="draftbtn" title="Draft" showIf="status == 2"
 				onClick="action-admission-entry-attrs-set-status-Draft" />
 		</panel>
 		<panel sidebar="true">
