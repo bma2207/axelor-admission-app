@@ -57,8 +57,6 @@ public class AdmissionProcessImp implements AdmissionProcessService {
 					}
 				}
 
-			} else {
-
 			}
 		}
 		return admissionProcess;
