@@ -1,79 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <object-views xmlns="http://axelor.com/xml/ns/object-views"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
   http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
 
-  <selection name="admission-entry-status-selection">
-    <option value="1">Draft</option>
-    <option value="2">Confirmed</option>
-    <option value="3">Admitted</option>
-    <option value="4">Cancelled</option>
-  </selection>
+	<selection name="admission-entry-status-selection">
+		<option value="1">Draft</option>
+		<option value="2">Confirmed</option>
+		<option value="3">Admitted</option>
+		<option value="4">Cancelled</option>
+	</selection>
 
-  <grid name="admission-entry-grid" model="com.axelor.admission.db.AdmissionEntry"
-    title="AdmissionEntry Grid">
-    <field name="candidate"/>
-    <field name="registrationDate" />
-    <field name="merit" />
-    <field name="status" />
-    <field name="validationDate" />
-    <field name="collegeSelected" />
-  </grid>
+	<grid name="admission-entry-grid" model="com.axelor.admission.db.AdmissionEntry"
+		title="AdmissionEntry Grid">
+		<field name="candidate" />
+		<field name="registrationDate" />
+		<field name="merit" />
+		<field name="status" />
+		<field name="validationDate" />
+		<field name="collegeSelected" />
+	</grid>
 
-  <form name="admission-entry-form" model="com.axelor.admission.db.AdmissionEntry"
-    title="AdmissionEntry Form" width="large" css="panel-pink">
+	<form name="admission-entry-form" model="com.axelor.admission.db.AdmissionEntry"
+		title="AdmissionEntry Form" width="large" css="panel-pink">
 
-    <panel title="Admission Entry" colSpan="12" name="admissionEntryPanel">
-      <field name="status" widget="nav-select" readonly="true" />
-      <field name="candidate" required="true" />
-      <field name="registrationDate" />
-      <field name="faculty" required="true" />
-      <field name="merit" />
-      <field name="collegesList" />
-      <field name="validationDate" readonly="true" />
-      <field name="collegeSelected" readonly="true" />
-    </panel>
-    <panel sidebar="true" hideIf="$readonly()">
-      <button name="Confirmed" title="Confirmed" hidden="true"
-        showIf="status ==1" onClick="action-admission-entry-group-onClick-confirmed" />
-      <button name="Canceled" title="Canceled" showIf="status == 1" />
-      <button name="Admitted" title="Admitted" showIf="status == 2"
-        onClick="action-admission-entry-attrs-set-status-Admitted" />
-      <button name="draft" title="Draft"
-        onClick="action-admission-entry-attrs-set-status-Draft" />
-    </panel>
-    <panel sidebar="true">
-      <field name="createdOn" />
-      <field name="updatedOn" />
-    </panel>
-  </form>
+		<panel title="Admission Entry" colSpan="12" name="admissionEntryPanel">
+			<field name="status" widget="nav-select" readonly="true" />
+			<field name="candidate" required="true" />
+			<field name="registrationDate" />
+			<field name="faculty" required="true" />
+			<field name="merit" />
+			<field name="collegesList" readonlyIf="status != 1" />
+			<field name="validationDate" readonly="true"  showIf="status != 1"/>
+			<field name="collegeSelected" readonly="true" showIf="status != 1" />
+		</panel>
+		<panel sidebar="true" hideIf="$readonly()">
+			<button name="Confirmed" title="Confirmed" hidden="true"
+				showIf="status ==1" onClick="action-admission-entry-group-onClick-confirmed" />
+			<button name="Canceled" title="Canceled" showIf="status == 1" onClick="action-admission-entry-attrs-set-status-Cancelled"/>
+			<!-- <button name="Admitted" title="Admitted" showIf="status == 2"
+				onClick="action-admission-entry-attrs-set-status-Admitted" /> -->
+			<button name="draft" title="Draft" showIf="status == 2"
+				onClick="action-admission-entry-attrs-set-status-Draft" />
+		</panel>
+		<panel sidebar="true">
+			<field name="createdOn" />
+			<field name="updatedOn" />
+		</panel>
+	</form>
 
-  <action-group name="action-admission-entry-group-onClick-confirmed">
-    <action name="action-admission-entry-attrs-set-status-Confirmed" />
-    <action name="action-admission-entry-attrs-set-currantdate" />
-  </action-group>
+	<action-group name="action-admission-entry-group-onClick-confirmed">
+		<action name="action-admission-entry-attrs-set-status-Confirmed" />
+		<action name="action-admission-entry-attrs-set-currantdate" />
+	</action-group>
 
-  <action-attrs name="action-admission-entry-attrs-set-currantdate">
-    <attribute name="value" for="validationDate" expr="eval:__date__"
-      if="status ==2" />
-  </action-attrs>
+	<action-attrs name="action-admission-entry-attrs-set-currantdate">
+		<attribute name="value" for="validationDate" expr="eval:__date__"
+			if="status ==2" />
+	</action-attrs>
 
-  <action-attrs name="action-admission-entry-attrs-set-status-Confirmed">
-    <attribute name="value" for="status" expr="2"
-      if="!collegesList !=null &amp;&amp; !collegesList?.isEmpty()" />
-  </action-attrs>
+	<action-attrs name="action-admission-entry-attrs-set-status-Confirmed">
+		<attribute name="value" for="status" expr="2"
+			if="!collegesList !=null &amp;&amp; !collegesList?.isEmpty()" />
+	</action-attrs>
 
-  <action-attrs name="action-admission-entry-attrs-set-status-Admitted">
-    <attribute name="value" for="status" expr="3" />
-  </action-attrs>
+	<action-attrs name="action-admission-entry-attrs-set-status-Admitted">
+		<attribute name="value" for="status" expr="3" />
+	</action-attrs>
 
-  <action-attrs name="action-admission-entry-attrs-set-status-Draft">
-    <attribute name="value" for="status" expr="1" />
-  </action-attrs>
+	<action-attrs name="action-admission-entry-attrs-set-status-Draft">
+		<attribute name="value" for="status" expr="1" />
+	</action-attrs>
 
-  <action-attrs name="action-admission-entry-attrs-set-status-Cancelled">
-    <attribute name="value" for="status" expr="4" />
-  </action-attrs>
+	<action-attrs name="action-admission-entry-attrs-set-status-Cancelled">
+		<attribute name="value" for="status" expr="4" />
+	</action-attrs>
 
 </object-views>

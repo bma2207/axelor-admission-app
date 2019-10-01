@@ -38,13 +38,13 @@
     <check field="toDate" />
     <check field="fromDate" />
     <check field="fromDate" error="fromDate date should not be ahead of toDate"
-      if="endDateT != null &amp;&amp; startDateT &gt; endDateT " />
+      if="toDate != null &amp;&amp; fromDate &gt; toDate " />
   </action-condition>
 
   <action-condition name="action-admission-process-condition-end-date">
     <check field="toDate" />
     <check field="fromDate" />
-    <check field="toDate" error="fromDate date should not be ahead of toDate"
-      if="fromDate != null &amp;&amp; startDateT &gt; endDateT " />
+    <check field="toDate" error="toDate date should not be ahead of fromDate"
+      if="fromDate != null &amp;&amp; fromDate &gt; toDate " />
   </action-condition>
 </object-views>
