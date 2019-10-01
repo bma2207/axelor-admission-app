@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <object-views xmlns="http://axelor.com/xml/ns/object-views"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
   http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
 
-  <grid name="college-entry-grid" model="com.axelor.admission.db.CollegeEntry"
-    title="College Entry Grid">
-    <field name="sequence"/>
-  </grid>
+	<grid name="college-entry-grid" model="com.axelor.admission.db.CollegeEntry"
+		title="College Entry Grid">
+		<field name="sequence" />
+	</grid>
 
-  <form name="college-entry-form" model="com.axelor.admission.db.CollegeEntry"
-    title="College Entry Form" width="large" css="panel-pink">
-    <panel title="College Entry" colSpan="12" name="college">
-      <field name="college" required="true" />
-      <field name="admissionEntry" />
-      <field name="sequence"/>
-    </panel>
+	<form name="college-entry-form" model="com.axelor.admission.db.CollegeEntry"
+		title="College Entry Form" width="large" css="panel-pink">
+		<panel title="College Entry" colSpan="12" name="college">
+			<field name="college" required="true" />
+			<field name="admissionEntry" />
+			<field name="sequence" />
+		</panel>
 
-    <panel sidebar="true">
-      <field name="createdOn" />
-      <field name="updatedOn" />
-    </panel>
-  </form>
+		<panel sidebar="true">
+			<field name="createdOn" />
+			<field name="updatedOn" />
+		</panel>
+	</form>
 
 </object-views>

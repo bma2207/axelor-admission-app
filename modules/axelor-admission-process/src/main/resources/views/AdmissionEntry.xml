@@ -31,15 +31,16 @@
 			<field name="faculty" required="true" />
 			<field name="merit" />
 			<field name="collegesList" readonlyIf="status != 1" />
-			<field name="validationDate" readonly="true"  showIf="status != 1"/>
+			<field name="validationDate" readonly="true" showIf="status != 1" />
 			<field name="collegeSelected" readonly="true" showIf="status != 1" />
 		</panel>
 		<panel sidebar="true" hideIf="$readonly()">
 			<button name="Confirmed" title="Confirmed" hidden="true"
 				showIf="status ==1" onClick="action-admission-entry-group-onClick-confirmed" />
-			<button name="Canceled" title="Canceled" showIf="status == 1" onClick="action-admission-entry-attrs-set-status-Cancelled"/>
-			<!-- <button name="Admitted" title="Admitted" showIf="status == 2"
-				onClick="action-admission-entry-attrs-set-status-Admitted" /> -->
+			<button name="Canceled" title="Canceled" showIf="status == 1"
+				onClick="action-admission-entry-attrs-set-status-Cancelled" />
+			<!-- <button name="Admitted" title="Admitted" showIf="status == 2" onClick="action-admission-entry-attrs-set-status-Admitted" 
+				/> -->
 			<button name="draft" title="Draft" showIf="status == 2"
 				onClick="action-admission-entry-attrs-set-status-Draft" />
 		</panel>

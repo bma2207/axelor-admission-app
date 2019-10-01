@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <object-views xmlns="http://axelor.com/xml/ns/object-views"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
   http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
 
-  <grid name="faculty-grid" model="com.axelor.admission.db.Faculty"
-    title="Faculty Grid">
-    <field name="name" />
-  </grid>
+	<grid name="faculty-grid" model="com.axelor.admission.db.Faculty"
+		title="Faculty Grid">
+		<field name="name" />
+	</grid>
 
-  <form name="faculty-form" model="com.axelor.admission.db.Faculty"
-    title="Faculty Form" width="large" css="panel-pink">
-    <panel title="Faculty" colSpan="12" name="facultyPanel">
-      <field name="name" required="true" />
-    </panel>
+	<form name="faculty-form" model="com.axelor.admission.db.Faculty"
+		title="Faculty Form" width="large" css="panel-pink">
+		<panel title="Faculty" colSpan="12" name="facultyPanel">
+			<field name="name" required="true" />
+		</panel>
 
-    <panel sidebar="true">
-      <field name="createdOn" />
-      <field name="updatedOn" />
-    </panel>
-  </form>
+		<panel sidebar="true">
+			<field name="createdOn" />
+			<field name="updatedOn" />
+		</panel>
+	</form>
 
 </object-views>
