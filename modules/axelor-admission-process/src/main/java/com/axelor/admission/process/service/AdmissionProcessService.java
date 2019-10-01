@@ -4,5 +4,5 @@ import com.axelor.admission.db.AdmissionProcess;
 
 public interface AdmissionProcessService {
 
-	public AdmissionProcess admissionProcess(AdmissionProcess admissionProcess);
+	public AdmissionProcess admissionSeatsManage(AdmissionProcess admissionProcess);
 }

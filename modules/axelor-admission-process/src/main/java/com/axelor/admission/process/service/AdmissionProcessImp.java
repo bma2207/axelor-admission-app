@@ -21,7 +21,7 @@ public class AdmissionProcessImp implements AdmissionProcessService {
 	FacultyEntryRepository facultyEntryRepository;
 
 	@Override
-	public AdmissionProcess admissionProcess(AdmissionProcess admissionProcess) {
+	public AdmissionProcess admissionSeatsManage(AdmissionProcess admissionProcess) {
 
 		List<AdmissionEntry> entry = Beans.get(AdmissionEntryRepository.class).all().fetch();
 		LocalDate start = admissionProcess.getFromDate();
