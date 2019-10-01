@@ -46,6 +46,7 @@ public class AdmissionProcessImp implements AdmissionProcessService {
 								facultyEntry.setSeats(value);
 								facultyEntryRepository.save(facultyEntry);
 								admissionEntry.setStatus(3);
+								admissionEntry.setCollegeSelected(facultyEntry.getCollage());
 								repo.save(admissionEntry);
 								break;
 							} else {

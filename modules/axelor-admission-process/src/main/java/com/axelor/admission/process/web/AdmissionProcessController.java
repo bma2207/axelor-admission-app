@@ -15,6 +15,7 @@ public class AdmissionProcessController {
 	public void admissionProccess(ActionRequest request, ActionResponse response) {
 
 		AdmissionProcess admissionProcess = request.getContext().asType(AdmissionProcess.class);
-		service.admissionProcess(admissionProcess);
+		admissionProcess = service.admissionProcess(admissionProcess);
+		response.setValues(admissionProcess);
 	}
 }

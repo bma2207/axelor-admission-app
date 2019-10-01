@@ -6,6 +6,7 @@
 
 	<grid name="college-entry-grid" model="com.axelor.admission.db.CollegeEntry"
 		title="College Entry Grid">
+		<field name="college"/>
 		<field name="sequence" />
 	</grid>
 
